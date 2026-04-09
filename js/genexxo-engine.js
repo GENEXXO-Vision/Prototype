@@ -2084,8 +2084,9 @@ function renderModal() {
   document.getElementById('purchaseModal').innerHTML = html;
 }
 
-document.getElementById('purchaseModal').addEventListener('click', function(e) {
-  if (e.target === this) this.classList.remove('show');
+document.addEventListener('click', function(e) {
+  const modal = document.getElementById('purchaseModal');
+  if (modal && e.target === modal) modal.classList.remove('show');
 });
 
 function toggleWallet(gwKey, appName) {
